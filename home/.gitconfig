@@ -1,0 +1,7 @@
+[user]
+	name = Antony Alanya
+	email = desordn04@gmail.com
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = input
