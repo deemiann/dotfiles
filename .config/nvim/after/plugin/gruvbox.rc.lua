@@ -5,6 +5,7 @@ gruvbox.setup({
   contrast = "hard",
   overrides = {
     String = { italic = false },
+    Operator = { italic = false },
     CursorLine = { bg = "#282828" },
     CursorColumn = { bg = "#282828" },
     ColorColumn = { bg = "#282828" },
