@@ -313,10 +313,10 @@ screens = [
                 widget.ThermalZone(
                     fmt="{}",
                     fgcolor_normal = bg0_h,
-                    high=60,
+                    high=70,
                     #fgcolor_high = orange,
                     fgcolor_high = "#d65d0e",
-                    crit=70,
+                    crit=90,
                     #fgcolor_crit = red,
                     fgcolor_crit = "#cc241d",
                     format_crit = "{temp}°C",
