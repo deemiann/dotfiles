@@ -32,8 +32,8 @@ set -g tide_status_color_failure fabd2f
 set -g tide_status_failure fb4934
 set -g tide_status_bg_color 3c3836
 
-set -g tide_time_bg_color fabd2f
-set -g tide_time_color 1d2021
+set -g tide_cmd_duration_bg_color fabd2f
+set -g tide_cmd_duration_color 1d2021
 
 set -g tide_node_bg_color b8bb26
 set -g tide_node_color 1d2021
