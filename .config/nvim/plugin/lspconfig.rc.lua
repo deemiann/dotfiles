@@ -108,6 +108,7 @@ nvim_lsp.sumneko_lua.setup {
 
 nvim_lsp.tailwindcss.setup {
   on_attach = on_attach,
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascripreact" },
   capabilities = capabilities
 }
 

@@ -10,7 +10,8 @@ $ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 ```console
 $ sudo pacman -S lua-language-server ripgrep
-$ sudo npm install -g typescript-language-server
+$ sudo npm install -g typescript-language-server typescript
+$ sudo npm install -g @tailwindcss/language-server
 $ sudo npm install -g @fsouza/prettierd
 $ sudo npm install -g vscode-langservers-extracted
 $ sudo npm install -g eslint_d
