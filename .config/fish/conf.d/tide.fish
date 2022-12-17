@@ -29,8 +29,8 @@ set -g tide_pwd_color_anchors d5c4a1
 
 set -g tide_status_color b8bb26
 set -g tide_status_color_failure fabd2f
-set -g tide_status_failure fb4934
 set -g tide_status_bg_color 3c3836
+set -g tide_status_bg_color_failure fb4934
 
 set -g tide_cmd_duration_bg_color fabd2f
 set -g tide_cmd_duration_color 1d2021
