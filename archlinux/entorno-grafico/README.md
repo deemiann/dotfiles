@@ -5,12 +5,14 @@
 ```console
 $ sudo pacmam -S xf86-video-intel intel-ucode xorg-server \
       xorg-xinit mesa mesa-demos lightdm lightdm-gtk-greeter \
-      qtile pulseaudio pulseaudio-alsa pamixer
+      qtile nitrogen pulseaudio pulseaudio-alsa pamixer
 ```
 
 ---
 
 ## Agregar teclado
+
+copiar archivo a "/etc/X11/xorg.conf.d/"
 
 ```console
 $ cp ~/dotfiles/arch/entorno-grafico/20-keyboard.conf /etc/X11/xorg.conf.d/

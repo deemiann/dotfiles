@@ -4,11 +4,11 @@
 
 ```console
 $ sudo pacman -S wget
-$ wget https://bootstrap.pypa.io/get-pip.py -O | python3
+$ wget https://bootstrap.pypa.io/get-pip.py -O - | python3
 $ python3 -m pip install psutil
 ```
 
-## Widgte modificacion
+## Widget modificacion
 
 ```console
 $ sudo vim /usr/lib/python3.10/site-packages/libqtile/widget/memory.py

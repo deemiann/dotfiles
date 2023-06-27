@@ -1,0 +1,9 @@
+arch base
+lightdm
+qtile
+yay
+brave
+alacritty
+fish
+tmux
+nvim
