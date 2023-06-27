@@ -5,7 +5,7 @@
 ```console
 $ sudo pacmam -S xf86-video-intel intel-ucode xorg-server \
       xorg-xinit mesa mesa-demos lightdm lightdm-gtk-greeter \
-      qtile pulseaudio pulseaudi-alsa pamixer
+      qtile pulseaudio pulseaudio-alsa pamixer
 ```
 
 ---
