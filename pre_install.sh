@@ -114,4 +114,7 @@ echo "¡FASE 1 COMPLETADA CON ÉXITO!"
 echo "Puedes desmontar con 'umount -R /mnt' y reiniciar con 'reboot'."
 echo "====================================================================="
 
+echo "nameserver 1.1.1.1" >> /mnt/etc/resolv.conf
+echo "nameserver 8.8.8.8" >> /mnt/etc/resolv.conf
+
 reboot

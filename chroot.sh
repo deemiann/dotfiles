@@ -72,11 +72,6 @@ printf '%s\n' \
 'EnableNetworkConfiguration=true' \
 > /etc/iwd/main.conf
 
-printf '%s\n' \
-'nameserver 1.1.1.1' \
-'nameserver 8.8.8.8' \
-> /etc/resolv.conf
-
 mkdir -p /var/lib/iwd
 cp dotfiles/src/toIwd/. /var/lib/iwd/ -a
 chmod 600 /var/lib/iwd/*
