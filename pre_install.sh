@@ -20,7 +20,7 @@ LOCALE_LINE="es_PE.UTF-8 UTF-8"
 
 # Selección de Software
 PAQUETES_SISTEMA="base linux linux-firmware"
-PAQUETES_HERRAMIENTAS="intel-ucode xorg-server xorg-xinit mesa sudo efibootmgr grub i3-wm ttf-dejavu dmenu alacritty feh vim iwd firefox pipewire pipewire-alsa piperwire-pulse wireplumber"
+PAQUETES_HERRAMIENTAS="intel-ucode xorg-server xorg-xinit mesa sudo efibootmgr grub i3-wm ttf-dejavu dmenu alacritty feh vim iwd firefox pipewire pipewire-alsa pipewire-pulse wireplumber"
 # =====================================================================
 
 echo "=== 1. DETECTANDO DISCO PRINCIPAL ==="
