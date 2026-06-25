@@ -64,7 +64,25 @@ cp /dotfiles/src/toImages/archlinux_logo.png /home/$NUEVO_USUARIO/Images
 chown -R $NUEVO_USUARIO:$NUEVO_USUARIO /home/$NUEVO_USUARIO
 
 echo "=== CHROOT: ACTIVANDO SERVICIOS DE RED ==="
-systemctl enable NetworkManager.service
+
+mkdir -p /etc/iwd
+
+printf '%s\n' \
+'[General]' \
+'EnableNetworkConfiguration=true' \
+> /etc/iwd/main.conf
+
+printf '%s\n' \
+'nameserver 1.1.1.1' \
+'nameserver 8.8.8.8' \
+> /etc/resolv.conf
+
+mkdir -p /var/lib/iwd
+cp dotfiles/src/toIwd/. /var/lib/iwd/ -a
+chmod 600 /var/lib/iwd/*
+chown root:root /var/lib/iwd/*
+
+systemctl enable iwd
 
 echo "=== CHROOT: INSTALANDO CARGADOR DE ARRANQUE GRUB ==="
 # Nota: Apunta al disco físico base ($DISK) mapeado automáticamente
