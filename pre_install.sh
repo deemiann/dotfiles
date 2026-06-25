@@ -20,7 +20,7 @@ LOCALE_LINE="es_PE.UTF-8 UTF-8"
 
 # Selección de Software
 PAQUETES_SISTEMA="base linux linux-firmware"
-PAQUETES_HERRAMIENTAS="intel-ucode xorg-server xorg-xinit mesa sudo efibootmgr grub i3-wm ttf-dejavu dmenu alacritty feh vim iwd firefox pipewire pipewrie-alsa piperiwe-pulse wireplumber"
+PAQUETES_HERRAMIENTAS="intel-ucode xorg-server xorg-xinit mesa sudo efibootmgr grub i3-wm ttf-dejavu dmenu alacritty feh vim networkmanager firefox pipewire pipewire-alsa piperwire-pulse wireplumber"
 # =====================================================================
 
 echo "=== 1. DETECTANDO DISCO PRINCIPAL ==="
@@ -95,10 +95,10 @@ if [ ! -f "chroot.sh" ]; then
     exit 1
 fi
 
-cp ../dotfiles /mnt/root/ -r
+cp ../dotfiles /mnt -r
 
 # Pasar todas las variables posicionales al script secundario
-arch-chroot /mnt bash /root/dotfiles/chroot.sh \
+arch-chroot /mnt bash /dotfiles/chroot.sh \
   "$DISK" \
   "$NUEVO_USUARIO" \
   "$PASS_USUARIO" \

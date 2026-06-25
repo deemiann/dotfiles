@@ -52,19 +52,19 @@ chmod 440 /etc/sudoers.d/wheel
 
 echo "=== COPIANDO CONFIGURACIONES ==="
 
-cp /mnt/root/dotfiles/src/to~/* /home/$NUEVO_USUARIO/
+cp /dotfiles/src/to~/. /home/$NUEVO_USUARIO/ -a
 mkdir -p /home/$NUEVO_USUARIO/.config
-cp /mnt/root/dotfiles/src/to.config/* /home/$NUEVO_USUARIO/.config -r
+cp /dotfiles/src/to.config/* /home/$NUEVO_USUARIO/.config -r
 
 mkdir -p /etc/X11/xorg.conf.d/
-cp /mnt/root/dotfiles/src/toXorg.conf.d/* /etc/X11/xorg.conf.d/ -r
+cp /dotfiles/src/toXorg.conf.d/* /etc/X11/xorg.conf.d/ -r
 
 mkdir -p /home/$NUEVO_USUARIO/Images
-cp /mnt/root/dotfiles/src/toImages/archlinux_logo.png /home/$NUEVO_USUARIO/Images
+cp /dotfiles/src/toImages/archlinux_logo.png /home/$NUEVO_USUARIO/Images
 chown -R $NUEVO_USUARIO:$NUEVO_USUARIO /home/$NUEVO_USUARIO
 
 echo "=== CHROOT: ACTIVANDO SERVICIOS DE RED ==="
-systemctl enable iwd
+systemctl enable NetworkManager.service
 
 echo "=== CHROOT: INSTALANDO CARGADOR DE ARRANQUE GRUB ==="
 # Nota: Apunta al disco físico base ($DISK) mapeado automáticamente
