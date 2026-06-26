@@ -61,10 +61,10 @@ cp /dotfiles/src/toXorg.conf.d/* /etc/X11/xorg.conf.d/ -r
 
 mkdir -p /home/$NUEVO_USUARIO/Images
 cp /dotfiles/src/toImages/archlinux_logo.png /home/$NUEVO_USUARIO/Images
+
 chown -R $NUEVO_USUARIO:$NUEVO_USUARIO /home/$NUEVO_USUARIO
 
 echo "=== CHROOT: ACTIVANDO SERVICIOS DE RED ==="
-
 mkdir -p /etc/iwd
 
 printf '%s\n' \
@@ -91,13 +91,7 @@ timeout 3
 editor no
 EOF
 
-if [[ "$DISK" == *"nvme"* ]]; then
-    P="p"
-else
-    P=""
-fi
-
-ROOT_UUID=$(blkid -s UUID -o value "${DISK}${P}3")
+ROOT_UUID=$(blkid -s UUID -o value "${DISK}3")
 
 mkdir -p /boot/loader/entries
 
