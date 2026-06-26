@@ -79,19 +79,40 @@ chown root:root /var/lib/iwd/*
 
 systemctl enable iwd
 
-echo "=== CHROOT: INSTALANDO CARGADOR DE ARRANQUE GRUB ==="
-# Nota: Apunta al disco físico base ($DISK) mapeado automáticamente
-grub-install --target=x86_64-efi \
-             --efi-directory=/boot/efi \
-             --bootloader-id="Arch Linux" \
-             --recheck \
-             "$DISK"
+echo "=== CHROOT: INSTALANDO SYSTEMD-BOOT ==="
 
-grub-mkconfig -o /boot/grub/grub.cfg
+bootctl install
+
+mkdir -p /boot/loader
+
+cat > /boot/loader/loader.conf <<EOF
+default arch
+timeout 3
+editor no
+EOF
+
+if [[ "$DISK" == *"nvme"* ]]; then
+    P="p"
+else
+    P=""
+fi
+
+ROOT_UUID=$(blkid -s UUID -o value "${DISK}${P}3")
+
+mkdir -p /boot/loader/entries
+
+cat > /boot/loader/entries/arch.conf <<EOF
+title Arch Linux
+linux /vmlinuz-linux
+initrd /intel-ucode.img
+initrd /initramfs-linux.img
+options root=UUID=$ROOT_UUID rw
+EOF
+
+systemctl enable systemd-boot-update.service
 
 echo "=== CHROOT: GENERANDO INITRAMFS ==="
 mkinitcpio -P
 
 echo "=== CHROOT: FINALIZADO ==="
 exit 0
-
