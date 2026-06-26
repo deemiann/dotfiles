@@ -20,7 +20,7 @@ LOCALE_LINE="es_PE.UTF-8 UTF-8"
 
 # Selección de Software
 PAQUETES_SISTEMA="base linux linux-firmware"
-PAQUETES_HERRAMIENTAS="intel-ucode xorg-server xorg-xinit mesa sudo efibootmgr grub i3-wm ttf-dejavu dmenu alacritty feh vim iwd firefox pipewire pipewire-alsa pipewire-pulse wireplumber"
+PAQUETES_HERRAMIENTAS="intel-ucode xorg-server xorg-xinit mesa sudo efibootmgr grub i3-wm ttf-dejavu dmenu alacritty feh vim iwd firefox pipewire pipewire-alsa pipewire-pulse wireplumber git"
 # =====================================================================
 
 echo "=== 1. DETECTANDO DISCO PRINCIPAL ==="
@@ -116,5 +116,6 @@ echo "====================================================================="
 
 echo "nameserver 1.1.1.1" >> /mnt/etc/resolv.conf
 echo "nameserver 8.8.8.8" >> /mnt/etc/resolv.conf
+rm /mnt/dotfiles -rf
 
 reboot

@@ -4,7 +4,7 @@
 
 # Si estamos en la primera terminal de texto (TTY1), arranca X automáticamente
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
-    exec startx
+    exec startx >/dev/null 2>&1
 fi
 
 # If not running interactively, don't do anything

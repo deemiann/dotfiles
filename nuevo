@@ -1,4 +1,0 @@
-sudo pacman -S rtkit
-sudo systemctl enable --now rtkit-daemon.service
-
-
