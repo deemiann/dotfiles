@@ -51,18 +51,18 @@ echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/wheel
 chmod 440 /etc/sudoers.d/wheel
 
 echo "=== COPIANDO CONFIGURACIONES ==="
-
-cp /dotfiles/src/to~/. /home/$NUEVO_USUARIO/ -a
-mkdir -p /home/$NUEVO_USUARIO/.config
-cp /dotfiles/src/to.config/* /home/$NUEVO_USUARIO/.config -r
-
-mkdir -p /etc/X11/xorg.conf.d/
-cp /dotfiles/src/toXorg.conf.d/* /etc/X11/xorg.conf.d/ -r
-
-mkdir -p /home/$NUEVO_USUARIO/Images
-cp /dotfiles/src/toImages/archlinux_logo.png /home/$NUEVO_USUARIO/Images
-
-chown -R $NUEVO_USUARIO:$NUEVO_USUARIO /home/$NUEVO_USUARIO
+#
+#cp /dotfiles/src/to~/. /home/$NUEVO_USUARIO/ -a
+#mkdir -p /home/$NUEVO_USUARIO/.config
+#cp /dotfiles/src/to.config/* /home/$NUEVO_USUARIO/.config -r
+#
+#mkdir -p /etc/X11/xorg.conf.d/
+#cp /dotfiles/src/toXorg.conf.d/* /etc/X11/xorg.conf.d/ -r
+#
+#mkdir -p /home/$NUEVO_USUARIO/Images
+#cp /dotfiles/src/toImages/archlinux_logo.png /home/$NUEVO_USUARIO/Images
+#
+#chown -R $NUEVO_USUARIO:$NUEVO_USUARIO /home/$NUEVO_USUARIO
 
 echo "=== CHROOT: ACTIVANDO SERVICIOS DE RED ==="
 mkdir -p /etc/iwd

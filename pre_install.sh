@@ -25,21 +25,22 @@ PAQUETES_HERRAMIENTAS="xorg-server xorg-xinit mesa sudo i3-wm ttf-dejavu gnu-fre
 DISK="/dev/sda"
 # =====================================================================
 # Limpieza de tablas previas
-sgdisk --zap-all "$DISK"
+##sgdisk --zap-all "$DISK"
 
-# Esquema solicitado: 1G EFI, 4G Swap, 40G Root, Restante Home
-sfdisk --label gpt "$DISK" <<EOF
-size=1G,  type=C12A7328-F81F-11D2-BA4B-00A0C93EC93B, name="EFI System"
-size=4G,  type=0657FD6D-A4AB-43C4-84E5-0933C84B4F4F, name="Linux swap"
-size=45G, type=0FC63DAF-8483-4772-8E79-3D69D8477DE4, name="Linux Root"
-type=0FC63DAF-8483-4772-8E79-3D69D8477DE4, name="Linux Home"
-EOF
+### Esquema solicitado: 1G EFI, 4G Swap, 40G Root, Restante Home
+##sfdisk --label gpt "$DISK" <<EOF
+##size=1G,  type=C12A7328-F81F-11D2-BA4B-00A0C93EC93B, name="EFI System"
+##size=4G,  type=0657FD6D-A4AB-43C4-84E5-0933C84B4F4F, name="Linux swap"
+##size=45G, type=0FC63DAF-8483-4772-8E79-3D69D8477DE4, name="Linux Root"
+##type=0FC63DAF-8483-4772-8E79-3D69D8477DE4, name="Linux Home"
+##EOF
 
-mkfs.vfat -F32 "${DISK}1"
+# boot formating
+#mkfs.vfat -F32 "${DISK}1"
 mkswap "${DISK}2"
 swapon "${DISK}2"
 mkfs.ext4 -F "${DISK}3"
-mkfs.ext4 -F "${DISK}4"
+#mkfs.ext4 -F "${DISK}4"
 
 # Primero la raíz raíz (/) para no pisar montajes posteriores
 mount "${DISK}3" /mnt
